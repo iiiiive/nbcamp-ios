@@ -36,6 +36,7 @@
 		1C5EA3FB2A89EC3300CD413E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5EA3F92A89EC3300CD413E /* Main.storyboard */; };
 		1C5EA3FF2A89ECF200CD413E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5EA3FE2A89ECF200CD413E /* MainViewController.swift */; };
 		1CB7EF392A8BA160003F9215 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB7EF382A8BA160003F9215 /* ColorManager.swift */; };
+		1CB7EF3E2A8BB32B003F9215 /* iiiiive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CB7EF3D2A8BB32B003F9215 /* iiiiive.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		1C5EA3F92A89EC3300CD413E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1C5EA3FE2A89ECF200CD413E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1CB7EF382A8BA160003F9215 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		1CB7EF3D2A8BB32B003F9215 /* iiiiive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iiiiive.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +321,7 @@
 		1C5EA3EA2A89EA3400CD413E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1CB7EF3A2A8BB248003F9215 /* Icon */,
 				1C2F32BE2A8B68FC00B26F14 /* Font */,
 				1C5EA3EE2A89EAAA00CD413E /* Assets.xcassets */,
 				1C5EA3EF2A89EAAA00CD413E /* LaunchScreen.storyboard */,
@@ -377,6 +380,14 @@
 				1C5EA3FE2A89ECF200CD413E /* MainViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1CB7EF3A2A8BB248003F9215 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				1CB7EF3D2A8BB32B003F9215 /* iiiiive.png */,
+			);
+			path = Icon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,6 +506,7 @@
 				1C2F32CD2A8B692400B26F14 /* Pretendard-Black.ttf in Resources */,
 				1C1EC9502A8A1384004308B6 /* Community.storyboard in Resources */,
 				1C2F32CB2A8B692400B26F14 /* Pretendard-Medium.ttf in Resources */,
+				1CB7EF3E2A8BB32B003F9215 /* iiiiive.png in Resources */,
 				1C2F32CA2A8B692400B26F14 /* Pretendard-Thin.ttf in Resources */,
 				1C1EC95D2A8A1472004308B6 /* Profile.storyboard in Resources */,
 				1C1EC9492A8A11A2004308B6 /* Home.storyboard in Resources */,
