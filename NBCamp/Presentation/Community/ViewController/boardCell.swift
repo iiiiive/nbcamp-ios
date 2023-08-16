@@ -7,21 +7,21 @@
 
 import UIKit
 
-class boardCell: UITableViewCell {
-
-    
-    
-    @IBOutlet weak var boardTitle: UILabel!
-    
-    @IBOutlet weak var boradSubtitle: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-
-}
+//class boardCell: UITableViewCell {
+//
+//
+//
+//    @IBOutlet weak var boardTitle: UILabel!
+//
+//    @IBOutlet weak var boradSubtitle: UILabel!
+//
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
+//
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//    }
+//
+//}
