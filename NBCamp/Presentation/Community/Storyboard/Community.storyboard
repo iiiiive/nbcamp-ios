@@ -29,7 +29,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boardcell" textLabel="sgt-91-5rj" detailTextLabel="wY4-48-W3O" style="IBUITableViewCellStyleSubtitle" id="uBZ-3b-fcE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boardCell" textLabel="sgt-91-5rj" detailTextLabel="wY4-48-W3O" style="IBUITableViewCellStyleSubtitle" id="uBZ-3b-fcE" customClass="boardCell" customModule="NBCamp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="361" height="53.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uBZ-3b-fcE" id="3oo-IH-EAS">
@@ -52,6 +52,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="boardTitle" destination="sgt-91-5rj" id="Rc5-e5-Zbj"/>
+                                            <outlet property="boradSubtitle" destination="wY4-48-W3O" id="kbj-WL-2fj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -78,6 +82,9 @@
                     <tabBarItem key="tabBarItem" title="커뮤니티" id="zB3-wh-ZgH"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="boardTable" destination="oo0-c7-F8N" id="V4p-37-DTe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

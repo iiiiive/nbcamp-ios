@@ -9,6 +9,9 @@ import UIKit
 
 class CommunityViewController: UIViewController {
     
+    
+    @IBOutlet weak var boardTable: UITableView!
+
     let formatter: DateFormatter = {
            let f = DateFormatter()
            f.dateStyle = .long
@@ -20,6 +23,8 @@ class CommunityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTitle()
+        boardTable.delegate = self
+        boardTable.dataSource = self
     }
     
     private func setTitle() {
@@ -36,13 +41,13 @@ extension CommunityViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let boardcell = tableView.dequeueReusableCell(withIdentifier: "boardcell", for: indexPath)
+        let boardCell = tableView.dequeueReusableCell(withIdentifier: "boardCell", for: indexPath)
               
               let target = Board.dummyBoardList[indexPath.row]
-              boardcell.textLabel?.text = target.content
-        boardcell.detailTextLabel?.text = formatter.string(from: target.insertDate)
+              boardCell.textLabel?.text = target.content
+              boardCell.detailTextLabel?.text = formatter.string(from: target.insertDate)
               
-              return boardcell
+              return boardCell
     }
 }
 

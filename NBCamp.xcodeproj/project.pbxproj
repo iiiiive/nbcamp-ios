@@ -27,6 +27,7 @@
 		1C5EA3FB2A89EC3300CD413E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5EA3F92A89EC3300CD413E /* Main.storyboard */; };
 		1C5EA3FF2A89ECF200CD413E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5EA3FE2A89ECF200CD413E /* MainViewController.swift */; };
 		F05E1C992A8A8977001D85B9 /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E1C982A8A8977001D85B9 /* dummy.swift */; };
+		F071FE092A8C6262003B9BD6 /* boardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F071FE082A8C6262003B9BD6 /* boardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		1C5EA3F92A89EC3300CD413E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1C5EA3FE2A89ECF200CD413E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F05E1C982A8A8977001D85B9 /* dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
+		F071FE082A8C6262003B9BD6 /* boardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				1C1EC9512A8A1397004308B6 /* CommunityViewController.swift */,
+				F071FE082A8C6262003B9BD6 /* boardCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				1C5EA3FF2A89ECF200CD413E /* MainViewController.swift in Sources */,
 				1C1EC9602A8A1485004308B6 /* ProfileViewController.swift in Sources */,
 				1C1EC9522A8A1397004308B6 /* CommunityViewController.swift in Sources */,
+				F071FE092A8C6262003B9BD6 /* boardCell.swift in Sources */,
 				F05E1C992A8A8977001D85B9 /* dummy.swift in Sources */,
 				1C1EC94B2A8A11F0004308B6 /* HomeViewController.swift in Sources */,
 				1C1EC96A2A8A1511004308B6 /* HistoryViewController.swift in Sources */,
