@@ -14,4 +14,5 @@ struct ColorManager {
 	static let nbcAccentColor = UIColor(named: "nbcAccentColor")
 	static let nbcBackgroundColor = UIColor(named: "nbcBackgroundColor")
 	static let nbcTintColor = UIColor(named: "nbcTintColor")
+	static let nbcSurfaceColor = UIColor(named: "nbcSurfaceColor")
 }
