@@ -12,6 +12,7 @@ class CommunityViewController: UIViewController {
     
     @IBOutlet weak var postCollection: UICollectionView!
     
+    
     let formatter: DateFormatter = {
            let f = DateFormatter()
            f.dateStyle = .long

@@ -14,7 +14,7 @@ class postViewCell: UICollectionViewCell {
     
     @IBOutlet weak var labelUsername: UILabel!
     
-    @IBOutlet weak var labelImage: UIImageView!
-    
     @IBOutlet weak var labelContent: UILabel!
+    
+    @IBOutlet weak var labelImage: UIImageView!
 }
