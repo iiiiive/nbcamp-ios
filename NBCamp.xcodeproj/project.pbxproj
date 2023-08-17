@@ -26,6 +26,7 @@
 		1C5EA3F52A89EAD000CD413E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5EA3F32A89EAD000CD413E /* AppDelegate.swift */; };
 		1C5EA3FB2A89EC3300CD413E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5EA3F92A89EC3300CD413E /* Main.storyboard */; };
 		1C5EA3FF2A89ECF200CD413E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5EA3FE2A89ECF200CD413E /* MainViewController.swift */; };
+		FFC9A4862A8E2C3100F8A8D3 /* 슬랙이미지 in Resources */ = {isa = PBXBuildFile; fileRef = FFC9A4852A8E2C3100F8A8D3 /* 슬랙이미지 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		1C5EA3F32A89EAD000CD413E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C5EA3F92A89EC3300CD413E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1C5EA3FE2A89ECF200CD413E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FFC9A4852A8E2C3100F8A8D3 /* 슬랙이미지 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "슬랙이미지"; path = "../../../../../../Downloads/슬랙이미지"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				1C1EC94A2A8A11F0004308B6 /* HomeViewController.swift */,
+				FFC9A4852A8E2C3100F8A8D3 /* 슬랙이미지 */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				1C5EA3F02A89EAAA00CD413E /* Assets.xcassets in Resources */,
 				1C1EC9502A8A1384004308B6 /* Community.storyboard in Resources */,
 				1C1EC95D2A8A1472004308B6 /* Profile.storyboard in Resources */,
+				FFC9A4862A8E2C3100F8A8D3 /* 슬랙이미지 in Resources */,
 				1C1EC9492A8A11A2004308B6 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
