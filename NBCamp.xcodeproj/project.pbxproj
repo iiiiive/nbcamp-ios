@@ -26,6 +26,7 @@
 		1C5EA3F52A89EAD000CD413E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5EA3F32A89EAD000CD413E /* AppDelegate.swift */; };
 		1C5EA3FB2A89EC3300CD413E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5EA3F92A89EC3300CD413E /* Main.storyboard */; };
 		1C5EA3FF2A89ECF200CD413E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5EA3FE2A89ECF200CD413E /* MainViewController.swift */; };
+		F00F667E2A8DBEDD00134D10 /* postImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00F667D2A8DBEDD00134D10 /* postImage.swift */; };
 		F0B6D96E2A8CB46700BCE66B /* post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B6D96D2A8CB46700BCE66B /* post.swift */; };
 		F0B6D9722A8CBEAF00BCE66B /* postViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B6D9712A8CBEAF00BCE66B /* postViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		1C5EA3F32A89EAD000CD413E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C5EA3F92A89EC3300CD413E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1C5EA3FE2A89ECF200CD413E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F00F667D2A8DBEDD00134D10 /* postImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postImage.swift; sourceTree = "<group>"; };
 		F0B6D96D2A8CB46700BCE66B /* post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = post.swift; sourceTree = "<group>"; };
 		F0B6D9712A8CBEAF00BCE66B /* postViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -319,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				F0B6D96D2A8CB46700BCE66B /* post.swift */,
+				F00F667D2A8DBEDD00134D10 /* postImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				F0B6D96E2A8CB46700BCE66B /* post.swift in Sources */,
 				1C1EC9592A8A1415004308B6 /* WriteViewController.swift in Sources */,
 				1C5EA3F52A89EAD000CD413E /* AppDelegate.swift in Sources */,
+				F00F667E2A8DBEDD00134D10 /* postImage.swift in Sources */,
 				1C5EA3F42A89EAD000CD413E /* SceneDelegate.swift in Sources */,
 				F0B6D9722A8CBEAF00BCE66B /* postViewCell.swift in Sources */,
 				1C5EA3FF2A89ECF200CD413E /* MainViewController.swift in Sources */,

@@ -99,8 +99,8 @@
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <constraints>
-                                                    <constraint firstItem="96G-2D-ref" firstAttribute="leading" secondItem="IRD-LO-WmE" secondAttribute="leadingMargin" constant="-8" id="CBy-FX-XXf"/>
-                                                    <constraint firstItem="96G-2D-ref" firstAttribute="top" secondItem="IRD-LO-WmE" secondAttribute="topMargin" constant="-8" id="nav-Uy-H5J"/>
+                                                    <constraint firstItem="96G-2D-ref" firstAttribute="leading" secondItem="IRD-LO-WmE" secondAttribute="leadingMargin" constant="-8" id="UX8-Y8-67i"/>
+                                                    <constraint firstItem="96G-2D-ref" firstAttribute="top" secondItem="IRD-LO-WmE" secondAttribute="topMargin" constant="-8" id="krW-OU-uqz"/>
                                                 </constraints>
                                                 <size key="customSize" width="361" height="164"/>
                                                 <connections>
