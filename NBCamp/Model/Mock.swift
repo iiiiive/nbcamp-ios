@@ -7,32 +7,22 @@
 
 import Foundation
 
+/// 목업 데이터를 사용하기 위한 싱글톤 패턴 인스턴스입니다.
 struct MockManager {
 	static let shared = MockManager()
 	
 	private init() {}
 	
-	var mock: [Board] = []
+	var postList: [Post] = [
+		Post(id: 1, likes: 0, title: "파이썬", content: "파이썬 문법 재밌네요.",
+			 username: "명세인", date: "08. 17 12:34", image: nil),
+		Post(id: 1, likes: 0, title: "파이썬", content: "파이썬 문법 재밌네요.",
+			 username: "명세인", date: "08. 17 12:34", image: nil),
+		Post(id: 1, likes: 0, title: "파이썬", content: "파이썬 문법 재밌네요.",
+			 username: "명세인", date: "08. 17 12:34", image: nil),
+		Post(id: 1, likes: 0, title: "파이썬", content: "파이썬 문법 재밌네요.",
+			 username: "명세인", date: "08. 17 12:34", image: nil),
+		Post(id: 1, likes: 0, title: "파이썬", content: "파이썬 문법 재밌네요.",
+			 username: "명세인", date: "08. 17 12:34", image: nil),
+	]
 }
-
-struct Board {}
-
-struct Post {
-	let title: String
-	let content: String
-	let username: String
-	var comments: Int
-	var likes: Int
-	var imageurl: String?
-	
-	init(title: String, content: String, username: String, comments: Int, likes: Int, imageurl: String? = nil) {
-		self.title = title
-		self.content = content
-		self.username = username
-		self.comments = comments
-		self.likes = likes
-		self.imageurl = imageurl
-	}
-}
-
-struct Paper {}
