@@ -18,4 +18,6 @@ class postViewCell: UICollectionViewCell {
     @IBOutlet weak var labelContent: UILabel!
     
     @IBOutlet weak var labelImage: UIImageView!
+
+    @IBOutlet weak var labelDate: UILabel!
 }

@@ -24,7 +24,7 @@ struct Post {
         insertDate = Date()
     }
     static var dummyBoardList = [
-        Post(content: "내용", title: "제목", username: "작성자"),
-        Post(content: "내용", title: "제목", username: "작성자")
+        Post(content: "내용1", title: "제목1", username: "작성자1"),
+        Post(content: "내용2", title: "제목2", username: "작성자2")
     ]
 }

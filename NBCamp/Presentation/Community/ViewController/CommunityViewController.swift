@@ -15,7 +15,7 @@ class CommunityViewController: UIViewController {
     
     let formatter: DateFormatter = {
            let f = DateFormatter()
-           f.dateStyle = .long
+           f.dateStyle = .short
            f.timeStyle = .short
            return f
        }()
@@ -53,7 +53,7 @@ extension CommunityViewController: UICollectionViewDataSource, UICollectionViewD
         
       
         //  postCell.Label.Title?.text = target.content
-        // postCell.detailTextLabel?.text = formatter.string(from: target.insertDate)
+         cell.labelDate.text = formatter.string(from: target.insertDate)
 
               return cell
     }
