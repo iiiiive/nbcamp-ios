@@ -130,7 +130,6 @@
 		1C1EC94C2A8A1350004308B6 /* Community */ = {
 			isa = PBXGroup;
 			children = (
-				F0BDD6752A8A890A0041346D /* dummy */,
 				1C1EC94E2A8A1371004308B6 /* ViewController */,
 				1C1EC94D2A8A1364004308B6 /* Storyboard */,
 			);
@@ -349,13 +348,6 @@
 				1C5EA3FE2A89ECF200CD413E /* MainViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		F0BDD6752A8A890A0041346D /* dummy */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = dummy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
