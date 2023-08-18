@@ -9,7 +9,6 @@ import SafariServices
 import UIKit
 
 class HomeViewController: UIViewController, SFSafariViewControllerDelegate {
-	///MARK: 인터페이스 빌더
 	@IBOutlet weak var usernameLabel: UILabel!
 	@IBOutlet weak var avatar: UIImageView!
 	@IBOutlet weak var banner: UIImageView!
@@ -17,28 +16,18 @@ class HomeViewController: UIViewController, SFSafariViewControllerDelegate {
 	@IBOutlet weak var secondExternalLinkButton: UIButton!
 	@IBOutlet weak var thirdExternalButton: UIButton!
 	
-	@IBAction func selectAvatar(_ sender: UIButton) {
-		let imagePicker = UIImagePickerController()
-		imagePicker.delegate = self
-		imagePicker.sourceType = .photoLibrary
-		self.present(imagePicker, animated: true, completion: nil)
-	}
-	
-	
 	@IBAction func goToFirstPage(_ sender: UIButton) {
 		let url: URL = URL(string: "https://teamsparta.notion.site/06897c48955043189378c855d902223b?pvs=4")!
 		let safariViewController = SFSafariViewController(url: url)
 		safariViewController.delegate = self
 		present(safariViewController, animated: true, completion: nil)
 	}
-	
 	@IBAction func goToSecondPage(_ sender: UIButton) {
 		let url: URL = URL(string: "https://teamsparta.notion.site/iOS-7-docs-11d6a99b205142bb8020137d15f716c2")!
 		let safariViewController = SFSafariViewController(url: url)
 		safariViewController.delegate = self
 		present(safariViewController, animated: true, completion: nil)
 	}
-	
 	@IBAction func goToThirdPage(_ sender: UIButton) {
 		let url: URL = URL(string: "https://app.gather.town/app/TxURMan5xPdtZZWY/nbcamp-iOS-A")!
 		let safariViewController = SFSafariViewController(url: url)
@@ -48,8 +37,7 @@ class HomeViewController: UIViewController, SFSafariViewControllerDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = ColorManager.nbcBackgroundColor
-		setHomeViewContent()
+		HomeDecorator.run(homeViewController: self)
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -60,52 +48,56 @@ class HomeViewController: UIViewController, SFSafariViewControllerDelegate {
 		super.viewWillDisappear(animated)
 	}
 	
-	private func setHomeViewContent() {
-		setTitle()
-		setAvatar()
-		setUsername()
-		setBanner()
-		setButton()
-	}
-	
-	private func setTitle() {
-		title = "홈"
-	}
-	
-	private func setAvatar() {
-		avatar.layer.cornerRadius = CGFloat(25.0)
-		avatar.layer.borderWidth = CGFloat(1.0)
-		avatar.layer.borderColor = ColorManager.nbcSurfaceColor?.cgColor
-	}
-	
-	private func setUsername() {
-		let user = User()
-		usernameLabel.text = user.username + "님, 환영해요!"
-	}
-	
-	private func setBanner() {
-		banner.layer.cornerRadius = CGFloat(10.0)
-	}
-	
-	private func setButton() {
-		firstExternalLinkButton.layer.borderWidth = 0
-		firstExternalLinkButton.backgroundColor = ColorManager.nbcSurfaceColor
-		secondExternalLinkButton.backgroundColor = ColorManager.nbcSurfaceColor
-		thirdExternalButton.backgroundColor = ColorManager.nbcSurfaceColor
-	}
-	
 	func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
 		dismiss(animated: true, completion: nil)
 	}
 }
 
-extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-		if let selected = info[.originalImage] as? UIImage {
-			avatar.image = selected
-		}
+//MARK: 홈 데코레이터
+class HomeDecorator {
+	static func run(homeViewController: HomeViewController) {
+		decorateTitle(homeViewController)
+		decorateAvatar(homeViewController)
+		decorateUsername(homeViewController)
+		decorateBanner(homeViewController)
+		decorateSafariBrowsingButton(homeViewController)
 	}
-	func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-		dismiss(animated: true, completion: nil)
+	
+	private static func decorateTitle(_ homeViewController: HomeViewController) {
+		homeViewController.title = "홈"
+	}
+	
+	private static func decorateAvatar(_ homeViewController: HomeViewController) {
+		homeViewController.avatar.image = User().image
+		homeViewController.avatar.layer.cornerRadius = CGFloat(25.0)
+		homeViewController.avatar.layer.borderWidth = CGFloat(2.0)
+		homeViewController.avatar.layer.borderColor = ColorManager.nbcTertiaryColor?.cgColor
+	}
+	
+	private static func decorateUsername(_ homeViewController: HomeViewController) {
+		let user = User()
+		homeViewController.usernameLabel.text = user.username + "님, 환영해요!"
+	}
+	
+	private static func decorateBanner(_ homeViewController: HomeViewController) {
+		homeViewController.banner.layer.cornerRadius = CGFloat(10.0)
+	}
+	
+	private static func decorateSafariBrowsingButton(_ homeViewController: HomeViewController) {
+		let feb = homeViewController.firstExternalLinkButton
+		let seb = homeViewController.secondExternalLinkButton
+		let teb = homeViewController.thirdExternalButton
+		feb?.layer.cornerRadius = CGFloat(10.0)
+		seb?.layer.cornerRadius = CGFloat(10.0)
+		teb?.layer.cornerRadius = CGFloat(10.0)
+		feb?.layer.borderWidth = CGFloat(2.0)
+		seb?.layer.borderWidth = CGFloat(2.0)
+		teb?.layer.borderWidth = CGFloat(2.0)
+		feb?.layer.borderColor = ColorManager.nbcTertiaryColor?.cgColor
+		seb?.layer.borderColor = ColorManager.nbcTertiaryColor?.cgColor
+		teb?.layer.borderColor = ColorManager.nbcTertiaryColor?.cgColor
+		feb?.backgroundColor = ColorManager.nbcSurfaceColor
+		seb?.backgroundColor = ColorManager.nbcSurfaceColor
+		teb?.backgroundColor = ColorManager.nbcSurfaceColor
 	}
 }

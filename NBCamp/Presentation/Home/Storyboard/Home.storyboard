@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KbK-K5-XZs">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -16,26 +16,24 @@
         </array>
     </customFonts>
     <scenes>
-        <!--홈-->
+        <!--Home View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="NBCamp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="NBCamp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="사용자님," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJh-pK-WM5">
-                                <rect key="frame" x="16" y="120" width="361" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자님," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJh-pK-WM5">
+                                <rect key="frame" x="70" y="123" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="o6R-TH-5YI"/>
+                                    <constraint firstAttribute="width" constant="300" id="ucp-2J-8zp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="28"/>
                                 <color key="textColor" name="nbcPrimaryColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="eJD-hh-QFd">
-                                <rect key="frame" x="16" y="186" width="361" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feR-sG-t1j">
                                 <rect key="frame" x="16" y="415" width="361" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -72,28 +70,34 @@
                                     <action selector="goToThirdPage:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kPd-R4-OKY"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iiiiive.png" translatesAutoresizingMaskIntoConstraints="NO" id="jXs-h7-Ai5">
-                                <rect key="frame" x="16" y="62" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jXs-h7-Ai5">
+                                <rect key="frame" x="10" y="123" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="QwV-VT-i01"/>
+                                    <constraint firstAttribute="width" constant="50" id="uuI-Zf-qgQ"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-PH-YNN">
-                                <rect key="frame" x="39" y="86" width="50" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" name="nbcTertiaryColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="photo.circle" catalog="system"/>
-                                <connections>
-                                    <action selector="selectAvatar:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QGk-Mf-n3o"/>
-                                </connections>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="eJD-hh-QFd">
+                                <rect key="frame" x="10" y="183" width="371" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="371" id="5oy-Au-H2i"/>
+                                    <constraint firstAttribute="height" constant="200" id="rQm-By-EV7"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UJh-pK-WM5" firstAttribute="leading" secondItem="jXs-h7-Ai5" secondAttribute="trailing" constant="10" id="N2c-2b-hbL"/>
+                            <constraint firstItem="UJh-pK-WM5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="VDE-cW-5ZF"/>
+                            <constraint firstItem="eJD-hh-QFd" firstAttribute="top" secondItem="UJh-pK-WM5" secondAttribute="bottom" constant="10" id="kHH-fb-eVP"/>
+                            <constraint firstItem="jXs-h7-Ai5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="lf9-Y0-NDC"/>
+                            <constraint firstItem="jXs-h7-Ai5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="rWz-AV-eNn"/>
+                            <constraint firstItem="eJD-hh-QFd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="yxx-6u-2hL"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" selectedImage="house.fill" catalog="system" id="Y8Y-lG-gfN">
-                        <imageReference key="image" image="house" catalog="system" symbolScale="default"/>
-                        <color key="badgeColor" name="nbcPrimaryColor"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="yPJ-hK-AlR"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="avatar" destination="jXs-h7-Ai5" id="nWw-Bq-j4H"/>
@@ -106,6 +110,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1932.06106870229" y="-34.507042253521128"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="s9E-D1-fId">
+            <objects>
+                <navigationController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KbK-K5-XZs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" id="vQk-UR-uu9">
+                        <imageReference key="image" image="house" catalog="system" symbolScale="medium"/>
+                        <color key="badgeColor" name="AccentColor"/>
+                        <imageReference key="selectedImage" image="house.fill" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PXV-PC-tWi">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="SV2-ln-bfQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yi3-jh-tGQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="1005.3435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
@@ -113,13 +146,11 @@
         <image name="home_banner.png" width="1000" height="525"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="iiiiive.png" width="1024" height="1024"/>
-        <image name="photo.circle" catalog="system" width="128" height="123"/>
-        <namedColor name="nbcPrimaryColor">
+        <namedColor name="AccentColor">
             <color red="0.078431372549019607" green="0.086274509803921567" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="nbcTertiaryColor">
-            <color red="0.61568627450980395" green="0.65490196078431373" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="nbcPrimaryColor">
+            <color red="0.078431372549019607" green="0.086274509803921567" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
