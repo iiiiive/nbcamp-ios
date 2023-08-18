@@ -18,9 +18,10 @@ struct Post {
 	//	TODO: 사용자가 댓글을 입력하면 추가되도록 할 것
 	//	var comments: String?
 	var date: String
-	var image: UIImage?
+	var image: String?
+	var addimage: UIImage?
 	
-	init(id: Int, likes: Int, title: String, content: String, username: String, date: String, image: UIImage?) {
+	init(id: Int, likes: Int, title: String, content: String, username: String, date: String, image: String? = "", addimage: UIImage? = UIImage(named: "default_image.png")) {
 		self.id = id
 		self.likes = likes
 		self.username = username
@@ -28,5 +29,6 @@ struct Post {
 		self.content = content
 		self.date = date
 		self.image = image
+		self.addimage = addimage
 	}
 }
