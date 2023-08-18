@@ -74,11 +74,11 @@ class CommunityViewController: UIViewController, UICollectionViewDataSource, UIC
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		let target = MockManager.shared.defaultList[indexPath.row]
-		if let detailVC = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-			detailVC.selectedPost = target
-			navigationController?.pushViewController(detailVC, animated: true)
-		}
+		//		let target = MockManager.shared.defaultList[indexPath.row]
+		//		if let detailVC = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
+		//			detailVC.selectedPost = target
+		//			navigationController?.pushViewController(detailVC, animated: true)
+		//		}
 	}
 }
 
