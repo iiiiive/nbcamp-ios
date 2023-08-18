@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <tabBarAppearance key="standardAppearance" backgroundEffect="systemUltraThinMaterial"/>
+                        <tabBarAppearance key="standardAppearance" backgroundEffect="systemChromeMaterial">
+                            <color key="backgroundColor" name="nbcTertiaryColor"/>
+                            <color key="shadowColor" name="nbcTertiaryColor"/>
+                        </tabBarAppearance>
                     </tabBar>
                     <connections>
                         <segue destination="iV3-cK-ew6" kind="relationship" relationship="viewControllers" id="ZXr-s3-NUK"/>
@@ -60,4 +64,9 @@
             <point key="canvasLocation" x="1386" y="479"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="nbcTertiaryColor">
+            <color red="0.61568627450980395" green="0.65490196078431373" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
