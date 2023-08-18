@@ -4,10 +4,17 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.ttf">
+            <string>Pretendard-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--홈-->
         <scene sceneID="s0d-6b-0kx">
@@ -17,26 +24,103 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="캠프 가이드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJh-pK-WM5">
-                                <rect key="frame" x="16" y="59" width="361" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="사용자님," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJh-pK-WM5">
+                                <rect key="frame" x="16" y="120" width="361" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="28"/>
+                                <color key="textColor" name="nbcPrimaryColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="eJD-hh-QFd">
+                                <rect key="frame" x="16" y="186" width="361" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feR-sG-t1j">
+                                <rect key="frame" x="16" y="415" width="361" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="훈련생 유의사항 및 제도"/>
+                                <buttonConfiguration key="configuration" style="plain" title="훈련생 유의사항 및 제도">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToFirstPage:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lVj-7Y-PHE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="594-8y-vOn">
+                                <rect key="frame" x="16" y="531" width="361" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="훈련과정 자료"/>
+                                <buttonConfiguration key="configuration" style="plain" title="훈련과정 자료">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToSecondPage:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1cE-ok-yIf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srw-7E-lhd">
+                                <rect key="frame" x="16" y="638" width="361" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="훈련과정 공간"/>
+                                <buttonConfiguration key="configuration" style="plain" title="훈련과정 공간">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToThirdPage:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kPd-R4-OKY"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iiiiive.png" translatesAutoresizingMaskIntoConstraints="NO" id="jXs-h7-Ai5">
+                                <rect key="frame" x="16" y="62" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-PH-YNN">
+                                <rect key="frame" x="39" y="86" width="50" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="nbcTertiaryColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="photo.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="selectAvatar:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QGk-Mf-n3o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" id="LT3-o0-wqE"/>
+                    <tabBarItem key="tabBarItem" title="홈" selectedImage="house.fill" catalog="system" id="Y8Y-lG-gfN">
+                        <imageReference key="image" image="house" catalog="system" symbolScale="default"/>
+                        <color key="badgeColor" name="nbcPrimaryColor"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="avatar" destination="jXs-h7-Ai5" id="nWw-Bq-j4H"/>
+                        <outlet property="banner" destination="eJD-hh-QFd" id="Xbx-dp-prh"/>
+                        <outlet property="firstExternalLinkButton" destination="feR-sG-t1j" id="AVT-Tp-ggf"/>
+                        <outlet property="secondExternalLinkButton" destination="594-8y-vOn" id="9Kc-K9-GDJ"/>
+                        <outlet property="thirdExternalButton" destination="Srw-7E-lhd" id="fQL-p6-Dqi"/>
+                        <outlet property="usernameLabel" destination="UJh-pK-WM5" id="yB6-5N-rMG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78.625954198473281" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="1005.3435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>
+        <image name="home_banner.png" width="1000" height="525"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="iiiiive.png" width="1024" height="1024"/>
+        <image name="photo.circle" catalog="system" width="128" height="123"/>
+        <namedColor name="nbcPrimaryColor">
+            <color red="0.078431372549019607" green="0.086274509803921567" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="nbcTertiaryColor">
+            <color red="0.61568627450980395" green="0.65490196078431373" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
