@@ -59,10 +59,10 @@ class ProfileViewController: UIViewController {
 	}
 	
 	override func viewDidLoad() {
-        super.viewDidLoad()
-        setUsername()
+		super.viewDidLoad()
+		setUsername()
 		setTimerLabel()
-    }
+	}
 	
 	private func setUsername() {
 		let user = User()
