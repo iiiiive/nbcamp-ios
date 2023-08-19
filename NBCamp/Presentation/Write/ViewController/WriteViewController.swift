@@ -16,17 +16,18 @@ class WriteViewController: UIViewController, UIImagePickerControllerDelegate, UI
 		let imagePicker = UIImagePickerController()
 		imagePicker.delegate = self
 		imagePicker.sourceType = .photoLibrary
-		
 		self.present(imagePicker, animated: true, completion: nil)
 	}
 	@IBAction func submit(_ sender: UIButton) {
 		let alertController = UIAlertController(title: "알림", message: "작성한 글을 게시판에 등록할까요?", preferredStyle: .alert)
 		let confirm = UIAlertAction(title: "확인", style: .default) { _ in
-			let data = Post(id: MockManager.shared.defaultList.count + 1, likes: 0, title: self.titleTextField.text ?? "",
-							content: self.contentTextField.text ?? "", username: User().username,
-							date: DateTimeFormatter.createDateTime(), addimage: self.previewImage.image)
-			MockManager.shared.defaultList.append(data)
-			print(data)
+			let user = MockManager.shared.user
+			let new = Post(id: MockManager.shared.defaultList.count + 1, likes: 0, title: self.titleTextField.text ?? "",
+						   content: self.contentTextField.text ?? "", username: user.username,
+						   date: DateTimeFormatter.createDateTime(), addimage: self.previewImage.image)
+			MockManager.shared.defaultList.append(new)
+			MockManager.shared.user.userpost.append(new)
+			print("사용자 데이터\(user.userpost)\n자유게시판 데이터\(MockManager.shared.defaultList)")
 			self.navigationController?.popViewController(animated: true)
 		}
 		let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
