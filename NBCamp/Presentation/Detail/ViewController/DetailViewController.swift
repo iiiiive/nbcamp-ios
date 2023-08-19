@@ -50,7 +50,7 @@ class DetailViewDecorator {
 	}
 	
 	private static func decoratePostImageView(_ detailViewController: DetailViewController, _ selectedPost: Post) {
-		detailViewController.postImageView.image = selectedPost.addimage
+		detailViewController.postImageView.image = selectedPost.uiimage
 	}
 	
 	private static func decorateContentLabel(_ detailViewController: DetailViewController, _ selectedPost: Post) {
