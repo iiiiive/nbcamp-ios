@@ -42,6 +42,7 @@ class HomeViewController: UIViewController, SFSafariViewControllerDelegate {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		HomeDecorator.run(homeViewController: self)
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
@@ -68,14 +69,15 @@ class HomeDecorator {
 	}
 	
 	private static func decorateAvatar(_ homeViewController: HomeViewController) {
-		homeViewController.avatar.image = User().image
+		let user = MockManager.shared.user
+		homeViewController.avatar.image = user.userimage
 		homeViewController.avatar.layer.cornerRadius = CGFloat(25.0)
 		homeViewController.avatar.layer.borderWidth = CGFloat(2.0)
 		homeViewController.avatar.layer.borderColor = ColorManager.nbcTertiaryColor?.cgColor
 	}
 	
 	private static func decorateUsername(_ homeViewController: HomeViewController) {
-		let user = User()
+		let user = MockManager.shared.user
 		homeViewController.usernameLabel.text = user.username + "님, 환영해요!"
 	}
 	
