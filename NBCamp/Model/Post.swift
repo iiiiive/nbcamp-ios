@@ -15,8 +15,6 @@ struct Post {
 	let username: String
 	let title: String
 	let content: String
-	//	TODO: 사용자가 댓글을 입력하면 추가되도록 할 것
-	//	var comments: String?
 	var date: String
 	var image: String?
 	var addimage: UIImage?

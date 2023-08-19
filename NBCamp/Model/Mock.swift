@@ -6,12 +6,15 @@
 //
 
 import Foundation
+import UIKit
 
-/// 목업 데이터를 사용하기 위한 싱글톤 패턴 인스턴스입니다.
+/// 목업 데이터를 사용하기 위한 싱글톤 패턴 인스턴스
 struct MockManager {
 	static var shared = MockManager()
 	
 	private init() {}
+	
+	var user = User(username: "김르탄", userimage: UIImage(named: "kimrtan"), userpost: [])
 	
 	var defaultList: [Post] = [
 		Post(id: 1, likes: 0, title: "나방캠 가입 인증이요", content: "오늘 처음 들어와봤는데 재밌는 글 많네요.",

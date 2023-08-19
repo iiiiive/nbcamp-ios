@@ -10,11 +10,12 @@ import UIKit
 
 struct User {
 	var username: String
-	var image: UIImage?
-	//TODO: 작성한 글 목록
+	var userimage: UIImage?
+	var userpost: [Post]
 	
-	init(username: String = "김르탄", userprofile: UIImage? = UIImage(named: "kimrtan")) {
+	init(username: String, userimage: UIImage?, userpost: [Post]) {
 		self.username = username
-		self.image = userprofile
+		self.userimage = userimage
+		self.userpost = userpost
 	}
 }
