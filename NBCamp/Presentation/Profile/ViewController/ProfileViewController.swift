@@ -18,6 +18,8 @@ class ProfileViewController: UIViewController {
 	@IBOutlet weak var startTimeLabel: UILabel!
 	@IBOutlet weak var attendanceTimeLabel: UILabel!
 	@IBOutlet weak var saveTimerLabel: UILabel!
+	@IBOutlet weak var admissionButton: UIButton!
+	@IBOutlet weak var pauseButton: UIButton!
 	
 	@IBAction func admission(_ sender: UIButton) {
 		if let timer = timer {
@@ -64,8 +66,18 @@ class ProfileViewController: UIViewController {
 		setTimerLabel()
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		print(MockManager.shared.user.username)
+		setUsername()
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+	}
+	
 	private func setUsername() {
-		let user = User()
+		let user = MockManager.shared.user
 		usernameLabel.text = user.username + "님, 오늘도 달려볼까요?"
 	}
 	

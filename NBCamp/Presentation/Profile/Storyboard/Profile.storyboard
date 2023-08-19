@@ -177,7 +177,9 @@
                     <navigationItem key="navigationItem" id="ELp-Xm-9b7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="admissionButton" destination="vnM-Mi-scq" id="9fH-9A-0NL"/>
                         <outlet property="attendanceTimeLabel" destination="z3H-C7-dIY" id="mTT-Xc-h8H"/>
+                        <outlet property="pauseButton" destination="dMs-yy-BR6" id="bXh-Rg-td6"/>
                         <outlet property="saveTimerLabel" destination="sIa-mi-yYW" id="orm-jD-YGC"/>
                         <outlet property="startTimeLabel" destination="ABQ-Ep-IAf" id="awg-Od-ipW"/>
                         <outlet property="timerLabel" destination="c46-Ag-xgz" id="A2I-uC-0lm"/>
