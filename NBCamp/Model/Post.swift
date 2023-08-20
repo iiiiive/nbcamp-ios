@@ -17,9 +17,10 @@ struct Post {
 	let content: String
 	var date: String
 	var image: String?
-	var addimage: UIImage?
+	var uiimage: UIImage?
 	
-	init(id: Int, likes: Int, title: String, content: String, username: String, date: String, image: String? = "", addimage: UIImage? = UIImage(named: "default_image.png")) {
+	init(id: Int, likes: Int, title: String, content: String, username: String, date: String,
+		 image: String? = "", addimage: UIImage? = UIImage(named: "default_image.png")) {
 		self.id = id
 		self.likes = likes
 		self.username = username
@@ -27,6 +28,6 @@ struct Post {
 		self.content = content
 		self.date = date
 		self.image = image
-		self.addimage = addimage
+		self.uiimage = addimage
 	}
 }
