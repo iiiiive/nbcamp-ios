@@ -39,7 +39,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUY-hA-w1z">
-                                <rect key="frame" x="196" y="670" width="181" height="50"/>
+                                <rect key="frame" x="227" y="670" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="f8u-JB-gis"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="pencil" catalog="system" title="글 남기기" imagePadding="20">
                                     <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
@@ -57,12 +60,12 @@
                                 </constraints>
                                 <color key="tintColor" name="nbcPrimaryColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="오래된 순으로">
-                                    <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="17"/>
+                                <buttonConfiguration key="configuration" style="filled" image="folder.fill" catalog="system" title="내 글 보기" imagePadding="12">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
                                     <color key="baseBackgroundColor" systemColor="systemGray2Color"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="sort:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Yki-2w-g5x"/>
+                                    <segue destination="5Qc-J5-QUa" kind="show" id="5ao-Pl-aj4"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9EM-kh-vWl">
@@ -150,14 +153,14 @@
                                 <color key="backgroundColor" name="nbcBackgroundColor"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDZ-uv-nHq">
-                                <rect key="frame" x="326" y="123" width="51" height="38"/>
-                                <color key="tintColor" systemColor="labelColor"/>
+                                <rect key="frame" x="316" y="123" width="61" height="38"/>
+                                <color key="tintColor" name="nbcPrimaryColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="내 글">
-                                    <fontDescription key="titleFontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                <buttonConfiguration key="configuration" style="gray">
+                                    <imageReference key="image" image="text.line.last.and.arrowtriangle.forward" catalog="system" symbolScale="medium"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="5Qc-J5-QUa" kind="show" id="ScL-tc-n0O"/>
+                                    <action selector="sort:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SjH-me-Be4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -171,8 +174,8 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9EM-kh-vWl" secondAttribute="trailing" id="HcT-tx-1ad"/>
                             <constraint firstItem="9EM-kh-vWl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KAD-7m-u4x"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eUY-hA-w1z" secondAttribute="trailing" constant="16" id="O6b-uc-inn"/>
-                            <constraint firstItem="eUY-hA-w1z" firstAttribute="leading" secondItem="tfQ-rj-Dbu" secondAttribute="trailing" constant="30" id="Ppg-JN-ZO9"/>
-                            <constraint firstItem="ZDZ-uv-nHq" firstAttribute="leading" secondItem="iER-Gt-Mps" secondAttribute="trailing" constant="60" id="Zn7-Ev-V1d"/>
+                            <constraint firstItem="eUY-hA-w1z" firstAttribute="leading" secondItem="tfQ-rj-Dbu" secondAttribute="trailing" constant="61" id="Ppg-JN-ZO9"/>
+                            <constraint firstItem="ZDZ-uv-nHq" firstAttribute="leading" secondItem="iER-Gt-Mps" secondAttribute="trailing" constant="50" id="Zn7-Ev-V1d"/>
                             <constraint firstItem="9EM-kh-vWl" firstAttribute="top" secondItem="ZDZ-uv-nHq" secondAttribute="bottom" constant="20" id="due-SK-cJd"/>
                             <constraint firstItem="9EM-kh-vWl" firstAttribute="top" secondItem="iER-Gt-Mps" secondAttribute="bottom" constant="8" symbolic="YES" id="k6R-Vp-uEB"/>
                             <constraint firstItem="tfQ-rj-Dbu" firstAttribute="top" secondItem="9EM-kh-vWl" secondAttribute="bottom" constant="8" symbolic="YES" id="kf9-l0-Fto"/>
@@ -187,7 +190,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="postCollectionView" destination="nUB-0q-nxS" id="JxD-yZ-hks"/>
-                        <outlet property="sortButton" destination="tfQ-rj-Dbu" id="94u-18-rtF"/>
+                        <outlet property="sortButton" destination="ZDZ-uv-nHq" id="NqQ-dB-aKu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -202,7 +205,15 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F06-nU-zh2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1178" y="-677"/>
+            <point key="canvasLocation" x="471" y="-254"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="TMJ-e6-T5P">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Detail" storyboardName="Detail" referencedIdentifier="Detail" id="L9i-Ag-Zc0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fok-hN-fha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669" y="-254"/>
         </scene>
         <!--Write-->
         <scene sceneID="jRb-uq-FeZ">
@@ -212,7 +223,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j7X-Re-amj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669" y="-272"/>
+            <point key="canvasLocation" x="894" y="-254"/>
         </scene>
         <!--자유게시판-->
         <scene sceneID="Tgm-nP-CeR">
@@ -242,9 +253,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="folder.fill" catalog="system" width="128" height="96"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="text.below.photo" catalog="system" width="117" height="128"/>
         <image name="text.below.photo.fill" catalog="system" width="117" height="128"/>
+        <image name="text.line.last.and.arrowtriangle.forward" catalog="system" width="128" height="97"/>
         <namedColor name="nbcAccentColor">
             <color red="0.90980392156862744" green="0.20392156862745098" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -260,9 +273,6 @@
         <namedColor name="nbcTertiaryColor">
             <color red="0.61568627450980395" green="0.65490196078431373" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

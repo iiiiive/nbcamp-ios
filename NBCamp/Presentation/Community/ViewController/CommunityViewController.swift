@@ -13,10 +13,10 @@ class CommunityViewController: UIViewController, UICollectionViewDataSource, UIC
 	
 	@IBAction func sort(_ sender: UIButton) {
 		if sortButton.isSelected {
-			sender.setTitle("최신 순으로", for: .normal)
+			sender.setImage(UIImage(named: "text.line.first.and.arrowtriangle.forward"), for: .normal)
 			MockManager.shared.defaultList.sort(by: { $1.id < $0.id })
 		} else {
-			sender.setTitle("오래된 순으로", for: .normal)
+			sender.setImage(UIImage(named: "text.line.last.and.arrowtriangle.forward"), for: .selected)
 			MockManager.shared.defaultList.sort(by: { $0.id < $1.id })
 		}
 		sortButton.isSelected.toggle()
@@ -44,28 +44,6 @@ class CommunityViewController: UIViewController, UICollectionViewDataSource, UIC
 		postCollectionView.dataSource = self
 	}
 	
-	//MARK: 이미지 캐시
-	private var imageCaches: [Int: UIImage] = [:]
-	private func setImage(for post: Post, completion: @escaping (UIImage?) -> Void) {
-		if let cachedImage = imageCaches[post.id] {
-			completion(cachedImage)
-		} else if let imageurl = post.image, let url = URL(string: imageurl) {
-			let session = URLSession.shared
-			let task = session.dataTask(with: url) { data, response, error in
-				if let data = data {
-					let image = UIImage(data: data)
-					self.imageCaches[post.id] = image // 이미지를 캐시에 저장
-					completion(image)
-				} else {
-					print("Error loading image for post \(post.id): \(error?.localizedDescription ?? "")")
-					completion(nil)
-				}
-			}
-			task.resume()
-		} else {
-			completion(nil)
-		}
-	}
 	private var selectedPost: Post?
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -78,20 +56,16 @@ class CommunityViewController: UIViewController, UICollectionViewDataSource, UIC
 		cell.titleLabel.text = target.title
 		cell.contentLabel.text = target.content
 		cell.usernameLabel.text = target.username + " " + target.date
-		setImage(for: target) { image in
-			DispatchQueue.main.async {
-				cell.previewImage.image = image
-			}
-		}
+		cell.previewImage.image = target.uiimage
 		return cell
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		//		let target = MockManager.shared.defaultList[indexPath.row]
-		//		if let detailVC = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-		//			detailVC.selectedPost = target
-		//			navigationController?.pushViewController(detailVC, animated: true)
-		//		}
+		let target = MockManager.shared.defaultList[indexPath.row]
+		if let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
+			detailViewController.post = target
+			navigationController?.pushViewController(detailViewController, animated: true)
+		}
 	}
 }
 
