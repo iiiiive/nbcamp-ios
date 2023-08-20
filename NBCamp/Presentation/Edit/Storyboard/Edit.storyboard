@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.ttf">
+            <string>Pretendard-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Edit View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="Edit" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="EditViewController" customModule="NBCamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="btx-Ap-byy">
+                                <rect key="frame" x="60" y="239" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="37Z-Ba-1dh"/>
+                                    <constraint firstAttribute="width" constant="100" id="3bg-mc-lqB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3I-5Z-Yh5">
+                                <rect key="frame" x="190" y="259" width="30" height="20"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="17"/>
+                                <color key="textColor" name="nbcPrimaryColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bK-Jg-NOQ">
+                                <rect key="frame" x="190" y="309" width="140" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7eo-MZ-AuX"/>
+                                    <constraint firstAttribute="width" constant="140" id="82x-C1-404"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv0-re-LIL">
+                                <rect key="frame" x="60" y="339" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="bPC-Jl-dTd"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="변경하기"/>
+                                <connections>
+                                    <action selector="changeImage:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NKb-4i-ZyS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfw-Ql-16W">
+                                <rect key="frame" x="100" y="514" width="190" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0lW-5p-ZqH"/>
+                                    <constraint firstAttribute="width" constant="190" id="5AS-cN-pBQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="저장">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
+                                    <color key="baseBackgroundColor" name="nbcAccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="changeUser:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xqD-HA-dRw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="btx-Ap-byy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="60" id="EZv-4n-xq9"/>
+                            <constraint firstItem="btx-Ap-byy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="180" id="JQP-Oz-uuL"/>
+                            <constraint firstItem="M3I-5Z-Yh5" firstAttribute="leading" secondItem="btx-Ap-byy" secondAttribute="trailing" constant="30" id="KXb-qS-UX9"/>
+                            <constraint firstItem="Hfw-Ql-16W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="Le6-FO-9Mu"/>
+                            <constraint firstItem="1bK-Jg-NOQ" firstAttribute="top" secondItem="M3I-5Z-Yh5" secondAttribute="bottom" constant="30" id="OL9-Eb-1cl"/>
+                            <constraint firstItem="Hfw-Ql-16W" firstAttribute="top" secondItem="mv0-re-LIL" secondAttribute="bottom" constant="140" id="fG8-MZ-KhT"/>
+                            <constraint firstItem="M3I-5Z-Yh5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="200" id="lbc-s8-TCt"/>
+                            <constraint firstItem="1bK-Jg-NOQ" firstAttribute="leading" secondItem="btx-Ap-byy" secondAttribute="trailing" constant="30" id="obx-xV-yGl"/>
+                            <constraint firstItem="mv0-re-LIL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="60" id="uFQ-Je-8eE"/>
+                            <constraint firstItem="mv0-re-LIL" firstAttribute="top" secondItem="btx-Ap-byy" secondAttribute="bottom" id="w7H-3s-3NR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="aAl-wO-2v3"/>
+                    <connections>
+                        <outlet property="userimageChangeButton" destination="mv0-re-LIL" id="ylw-8Z-o1x"/>
+                        <outlet property="userimageView" destination="btx-Ap-byy" id="aZS-Cb-pL9"/>
+                        <outlet property="usernameLabel" destination="M3I-5Z-Yh5" id="7eJ-Iu-fNv"/>
+                        <outlet property="usernameTextField" destination="1bK-Jg-NOQ" id="r8k-Sp-37p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962.59541984732823" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="nbcAccentColor">
+            <color red="0.90980392156862744" green="0.20392156862745098" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="nbcPrimaryColor">
+            <color red="0.078431372549019607" green="0.086274509803921567" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

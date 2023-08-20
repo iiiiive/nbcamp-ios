@@ -1,44 +1,280 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0FL-oj-IXN">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.ttf">
+            <string>Pretendard-Bold</string>
+        </array>
+        <array key="Pretendard-Regular.ttf">
+            <string>Pretendard-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--커뮤니티-->
+        <!--Community View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="Community" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="CommunityViewController" customModule="NBCamp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="CommunityViewController" customModule="NBCamp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="커뮤니티" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iER-Gt-Mps">
-                                <rect key="frame" x="16" y="59" width="361" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자유게시판" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iER-Gt-Mps">
+                                <rect key="frame" x="16" y="113" width="250" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Pik-Zn-OTv"/>
+                                    <constraint firstAttribute="width" constant="250" id="luk-Z9-pna"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUY-hA-w1z">
+                                <rect key="frame" x="227" y="670" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="f8u-JB-gis"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="pencil" catalog="system" title="글 남기기" imagePadding="20">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
+                                    <color key="baseBackgroundColor" name="nbcAccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="mLY-EY-0Az" kind="show" id="Fsl-fo-rTh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfQ-rj-Dbu">
+                                <rect key="frame" x="16" y="670" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="ilR-r0-Uzb"/>
+                                    <constraint firstAttribute="height" constant="50" id="lEa-rq-nyK"/>
+                                </constraints>
+                                <color key="tintColor" name="nbcPrimaryColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="folder.fill" catalog="system" title="내 글 보기" imagePadding="12">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGray2Color"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="5Qc-J5-QUa" kind="show" id="5ao-Pl-aj4"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9EM-kh-vWl">
+                                <rect key="frame" x="0.0" y="181" width="393" height="481"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nUB-0q-nxS" userLabel="Post Collection">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="481"/>
+                                        <color key="backgroundColor" name="nbcBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CFW-Dt-ytb">
+                                            <size key="itemSize" width="361" height="164"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCell" id="IRD-LO-WmE" userLabel="postCell" customClass="PostCell" customModule="NBCamp" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="0.0" width="361" height="164"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="96G-2D-ref">
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="164"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70o-qz-rM5" userLabel="labelTitle">
+                                                            <rect key="frame" x="10" y="30" width="150" height="20.333333333333329"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="150" id="Dae-MO-Bk7"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yoe-TZ-RNN">
+                                                            <rect key="frame" x="255" y="30" width="100" height="100"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="100" id="IgH-xP-ziG"/>
+                                                                <constraint firstAttribute="width" constant="100" id="dgs-oh-cV7"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bc2-8s-D4Q" userLabel="labelContent">
+                                                            <rect key="frame" x="10" y="70.333333333333329" width="200" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="200" id="yY8-uY-OTC"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성자 MM. dd. HH:mm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2E-71-pbd" userLabel="labelUsername">
+                                                            <rect key="frame" x="10" y="128.33333333333334" width="160" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="160" id="zye-OV-xDm"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
+                                                            <color key="textColor" name="nbcTertiaryColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <viewLayoutGuide key="safeArea" id="AJL-HC-Hij"/>
+                                                    <color key="backgroundColor" name="nbcBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="70o-qz-rM5" firstAttribute="top" secondItem="AJL-HC-Hij" secondAttribute="top" constant="30" id="6dx-iV-m0s"/>
+                                                        <constraint firstItem="Yoe-TZ-RNN" firstAttribute="leading" secondItem="70o-qz-rM5" secondAttribute="trailing" constant="95" id="6fF-4T-P8e"/>
+                                                        <constraint firstItem="Bc2-8s-D4Q" firstAttribute="leading" secondItem="AJL-HC-Hij" secondAttribute="leading" constant="10" id="Nkd-co-Ha0"/>
+                                                        <constraint firstItem="N2E-71-pbd" firstAttribute="leading" secondItem="AJL-HC-Hij" secondAttribute="leading" constant="10" id="Zaq-4r-49L"/>
+                                                        <constraint firstAttribute="height" constant="164" id="h7F-fO-AiF"/>
+                                                        <constraint firstItem="Yoe-TZ-RNN" firstAttribute="top" secondItem="AJL-HC-Hij" secondAttribute="top" constant="30" id="hLq-Io-GYF"/>
+                                                        <constraint firstItem="70o-qz-rM5" firstAttribute="leading" secondItem="AJL-HC-Hij" secondAttribute="leading" constant="10" id="jTB-k5-hOu"/>
+                                                        <constraint firstItem="N2E-71-pbd" firstAttribute="top" secondItem="Bc2-8s-D4Q" secondAttribute="bottom" constant="40" id="oaF-my-MFq"/>
+                                                        <constraint firstAttribute="width" constant="361" id="qem-Dt-SpW"/>
+                                                        <constraint firstItem="Bc2-8s-D4Q" firstAttribute="top" secondItem="70o-qz-rM5" secondAttribute="bottom" constant="20" id="vvk-Ta-t0c"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <color key="backgroundColor" name="nbcSurfaceColor"/>
+                                                <size key="customSize" width="361" height="164"/>
+                                                <connections>
+                                                    <outlet property="contentLabel" destination="Bc2-8s-D4Q" id="JqJ-sc-6K4"/>
+                                                    <outlet property="previewImage" destination="Yoe-TZ-RNN" id="BYs-iA-eUN"/>
+                                                    <outlet property="titleLabel" destination="70o-qz-rM5" id="Yqd-rb-AEe"/>
+                                                    <outlet property="usernameLabel" destination="N2E-71-pbd" id="f46-Jq-7AE"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" name="nbcBackgroundColor"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDZ-uv-nHq">
+                                <rect key="frame" x="316" y="123" width="61" height="38"/>
+                                <color key="tintColor" name="nbcPrimaryColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray">
+                                    <imageReference key="image" image="text.line.last.and.arrowtriangle.forward" catalog="system" symbolScale="medium"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="sort:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SjH-me-Be4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="nbcBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iER-Gt-Mps" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="3HJ-QP-sPr"/>
+                            <constraint firstItem="tfQ-rj-Dbu" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="4I2-hZ-6QE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZDZ-uv-nHq" secondAttribute="trailing" constant="16" id="8PX-Cf-EWg"/>
+                            <constraint firstItem="eUY-hA-w1z" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Bft-ag-gZ2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9EM-kh-vWl" secondAttribute="trailing" id="HcT-tx-1ad"/>
+                            <constraint firstItem="9EM-kh-vWl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KAD-7m-u4x"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eUY-hA-w1z" secondAttribute="trailing" constant="16" id="O6b-uc-inn"/>
+                            <constraint firstItem="eUY-hA-w1z" firstAttribute="leading" secondItem="tfQ-rj-Dbu" secondAttribute="trailing" constant="61" id="Ppg-JN-ZO9"/>
+                            <constraint firstItem="ZDZ-uv-nHq" firstAttribute="leading" secondItem="iER-Gt-Mps" secondAttribute="trailing" constant="50" id="Zn7-Ev-V1d"/>
+                            <constraint firstItem="9EM-kh-vWl" firstAttribute="top" secondItem="ZDZ-uv-nHq" secondAttribute="bottom" constant="20" id="due-SK-cJd"/>
+                            <constraint firstItem="9EM-kh-vWl" firstAttribute="top" secondItem="iER-Gt-Mps" secondAttribute="bottom" constant="8" symbolic="YES" id="k6R-Vp-uEB"/>
+                            <constraint firstItem="tfQ-rj-Dbu" firstAttribute="top" secondItem="9EM-kh-vWl" secondAttribute="bottom" constant="8" symbolic="YES" id="kf9-l0-Fto"/>
+                            <constraint firstItem="ZDZ-uv-nHq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="njo-wW-YqR"/>
+                            <constraint firstItem="tfQ-rj-Dbu" firstAttribute="leading" secondItem="9EM-kh-vWl" secondAttribute="leading" constant="16" id="q4A-u2-FIp"/>
+                            <constraint firstItem="eUY-hA-w1z" firstAttribute="top" secondItem="9EM-kh-vWl" secondAttribute="bottom" constant="8" id="tpU-Xu-zue"/>
+                            <constraint firstItem="iER-Gt-Mps" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="y5X-9I-TxJ"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="커뮤니티" id="zB3-wh-ZgH"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nb6-D6-PEj"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="postCollectionView" destination="nUB-0q-nxS" id="JxD-yZ-hks"/>
+                        <outlet property="sortButton" destination="ZDZ-uv-nHq" id="NqQ-dB-aKu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78.625954198473281" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="669.46564885496184" y="-677.46478873239437"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="yYG-0g-KiV">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="History" storyboardName="History" referencedIdentifier="History" id="5Qc-J5-QUa" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Nr4-mA-RB8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F06-nU-zh2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="471" y="-254"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="TMJ-e6-T5P">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Detail" storyboardName="Detail" referencedIdentifier="Detail" id="L9i-Ag-Zc0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fok-hN-fha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669" y="-254"/>
+        </scene>
+        <!--Write-->
+        <scene sceneID="jRb-uq-FeZ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Write" storyboardName="Write" referencedIdentifier="Write" id="mLY-EY-0Az" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="d6F-sU-mtw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j7X-Re-amj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="894" y="-254"/>
+        </scene>
+        <!--자유게시판-->
+        <scene sceneID="Tgm-nP-CeR">
+            <objects>
+                <navigationController storyboardIdentifier="Community" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0FL-oj-IXN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="자유게시판" id="G4Z-xR-IRn">
+                        <imageReference key="image" image="text.below.photo" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="text.below.photo.fill" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UHC-8W-lLP">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="nbcPrimaryColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Rg7-FX-BGD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVG-Qw-yDV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-257.25190839694653" y="-677.46478873239437"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="folder.fill" catalog="system" width="128" height="96"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="text.below.photo" catalog="system" width="117" height="128"/>
+        <image name="text.below.photo.fill" catalog="system" width="117" height="128"/>
+        <image name="text.line.last.and.arrowtriangle.forward" catalog="system" width="128" height="97"/>
+        <namedColor name="nbcAccentColor">
+            <color red="0.90980392156862744" green="0.20392156862745098" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="nbcBackgroundColor">
+            <color red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="nbcPrimaryColor">
+            <color red="0.078431372549019607" green="0.086274509803921567" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="nbcSurfaceColor">
+            <color red="0.94901960784313721" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="nbcTertiaryColor">
+            <color red="0.61568627450980395" green="0.65490196078431373" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
