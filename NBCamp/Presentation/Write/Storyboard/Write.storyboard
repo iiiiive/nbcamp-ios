@@ -130,7 +130,7 @@
                     <connections>
                         <outlet property="contentTextField" destination="MT1-QK-Znb" id="vTv-Kl-fnP"/>
                         <outlet property="previewImage" destination="RrN-Dr-cCO" id="6NI-CQ-qaw"/>
-                        <outlet property="titleTextField" destination="MT1-QK-Znb" id="8i0-Cx-PA7"/>
+                        <outlet property="titleTextField" destination="4Nf-Hu-c51" id="d1J-zm-u4f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
