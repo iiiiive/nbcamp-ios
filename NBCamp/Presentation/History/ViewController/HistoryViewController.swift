@@ -8,6 +8,7 @@
 import UIKit
 
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	
 	@IBOutlet weak var userpostTableView: UITableView!
 	
 	override func viewDidLoad() {
@@ -18,7 +19,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		userpostTableView.reloadData()
-		print("히스토리 뷰 컨트롤러: \(MockManager.shared.user.userpost)")
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
@@ -41,13 +41,33 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
 		cell.contentLabel.text = target.content
 		return cell
 	}
+	
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		if editingStyle == .delete {
+			MockManager.shared.user.userpost.remove(at: indexPath.row)
+			MockManager.shared.defaultList.remove(at: indexPath.row)
+			userpostTableView.deleteRows(at: [indexPath], with: .fade)
+		}
+	}
 }
 
 class HistoryCell: UITableViewCell {
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var contentLabel: UILabel!
 	
+	static let reuseIdenifier = "HistoryCell"
+	
+	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+		super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+	}
+	
+	@available(*, unavailable)
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
+	}
+	
+	func setTodoCell() {
+		accessoryType = .none
+		selectionStyle = .default
 	}
 }

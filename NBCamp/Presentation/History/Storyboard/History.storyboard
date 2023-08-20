@@ -26,52 +26,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-I5-fS2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cTt-I5-fS2">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="759" id="HWS-Ff-ZdS"/>
-                                    <constraint firstAttribute="width" constant="393" id="bM9-GJ-Kcb"/>
-                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryCell" rowHeight="100" id="SYp-Q4-ctz" customClass="HistoryCell" customModule="NBCamp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryCell" textLabel="YlB-ZO-2C1" detailTextLabel="okz-Ii-J8y" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="SYp-Q4-ctz" customClass="HistoryCell" customModule="NBCamp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SYp-Q4-ctz" id="0wF-cr-6O6">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSL-Ld-oeY">
-                                                    <rect key="frame" x="30" y="21" width="200" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="RtR-gT-FsN"/>
-                                                        <constraint firstAttribute="height" constant="30" id="bWq-a2-f2P"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YlB-ZO-2C1">
+                                                    <rect key="frame" x="20" y="19.333333333333336" width="34" height="19.333333333333332"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="16"/>
                                                     <color key="textColor" name="nbcPrimaryColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8Q-wp-h6x">
-                                                    <rect key="frame" x="30" y="61" width="200" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="TVs-mz-8oK"/>
-                                                        <constraint firstAttribute="height" constant="30" id="ylI-iO-Zvt"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="17"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="okz-Ii-J8y">
+                                                    <rect key="frame" x="20" y="41.333333333333329" width="36" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
                                                     <color key="textColor" name="nbcTertiaryColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="fSL-Ld-oeY" firstAttribute="leading" secondItem="0wF-cr-6O6" secondAttribute="leadingMargin" constant="10" id="XWC-tP-XdX"/>
-                                                <constraint firstItem="fSL-Ld-oeY" firstAttribute="top" secondItem="0wF-cr-6O6" secondAttribute="topMargin" constant="10" id="bNX-JA-VBt"/>
-                                                <constraint firstItem="e8Q-wp-h6x" firstAttribute="leading" secondItem="0wF-cr-6O6" secondAttribute="leadingMargin" constant="10" id="cik-0W-ZUy"/>
-                                                <constraint firstItem="e8Q-wp-h6x" firstAttribute="top" secondItem="fSL-Ld-oeY" secondAttribute="bottom" constant="10" id="hcU-SY-5J3"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="contentLabel" destination="e8Q-wp-h6x" id="Rdb-if-do2"/>
-                                            <outlet property="titleLabel" destination="fSL-Ld-oeY" id="fRj-ur-c37"/>
+                                            <outlet property="contentLabel" destination="okz-Ii-J8y" id="OYe-lv-Uj3"/>
+                                            <outlet property="titleLabel" destination="YlB-ZO-2C1" id="NM8-q7-ZT7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -79,12 +64,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="nbcBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="cTt-I5-fS2" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="DUi-bc-qNS"/>
-                            <constraint firstItem="cTt-I5-fS2" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Zx9-QR-FvF"/>
-                            <constraint firstItem="cTt-I5-fS2" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="a9V-AP-iFF"/>
-                            <constraint firstItem="cTt-I5-fS2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dqT-AA-yP1"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BP6-Kd-1L9"/>
                     <connections>
