@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-/// 목업 데이터를 사용하기 위한 싱글톤 패턴 인스턴스
 struct MockManager {
 	static var shared = MockManager()
 	

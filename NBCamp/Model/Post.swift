@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-/// `UICollectionViewCell` 요소에 나타나는 값을 정의하고 있습니다.
 struct Post {
 	let id: Int
 	var likes: Int
