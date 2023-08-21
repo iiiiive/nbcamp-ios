@@ -3,6 +3,8 @@
 //  NBCamp
 //
 //  Created by Yujin Kim on 2023-08-14.
+//  Edited by Aera Lee on 2023-08-17.
+//  Edited by Yujin Kim on 2023-08-20.
 //
 
 import UIKit
