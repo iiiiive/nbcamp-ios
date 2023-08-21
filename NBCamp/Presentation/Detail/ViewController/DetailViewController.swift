@@ -59,7 +59,7 @@ class DetailViewController: UIViewController {
 		super.viewWillDisappear(animated)
 	}
 }
-//MARK: 게시글 상세 뷰 데코레이터
+
 class DetailViewDecorator {
 	static func run(detailViewController: DetailViewController, selectedPost: Post) {
 		decorateTitleLabel(detailViewController, selectedPost)

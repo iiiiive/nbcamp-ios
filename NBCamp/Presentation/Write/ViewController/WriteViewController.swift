@@ -22,9 +22,7 @@ class WriteViewController: UIViewController, UIImagePickerControllerDelegate, UI
 		let alertController = UIAlertController(title: "알림", message: "작성한 글을 게시판에 등록할까요?", preferredStyle: .alert)
 		let confirm = UIAlertAction(title: "확인", style: .default) { _ in
 			let user = MockManager.shared.user
-			let new = Post(id: MockManager.shared.defaultList.count + 1, likes: 0, title: self.titleTextField.text ?? "",
-						   content: self.contentTextField.text ?? "", username: user.username,
-						   date: DateTimeFormatter.createDateTime(), addimage: self.previewImage.image)
+			let new = Post(id: MockManager.shared.defaultList.count + 1, likes: 0, title: self.titleTextField.text ?? "", content: self.contentTextField.text ?? "",username: user.username, date: DateTimeFormatter.createDateTime(), addimage: self.previewImage.image)
 			MockManager.shared.defaultList.insert(new, at: 0)
 			MockManager.shared.user.userpost.insert(new, at: 0)
 			print("사용자 데이터\(user.userpost)\n자유게시판 데이터\(MockManager.shared.defaultList)")
@@ -38,7 +36,7 @@ class WriteViewController: UIViewController, UIImagePickerControllerDelegate, UI
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		WriteDecorator.run(writeViewController: self)
+		WriteViewDecorator.run(writeViewController: self)
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -61,8 +59,7 @@ class WriteViewController: UIViewController, UIImagePickerControllerDelegate, UI
 	}
 }
 
-//MARK: 글 쓰기 뷰 데코레이터
-class WriteDecorator {
+class WriteViewDecorator {
 	static func run(writeViewController: WriteViewController) {
 		decorateTextField(writeViewController)
 	}

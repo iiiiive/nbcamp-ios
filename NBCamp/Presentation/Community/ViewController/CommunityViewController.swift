@@ -10,7 +10,6 @@ import UIKit
 class CommunityViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 	@IBOutlet weak var postCollectionView: UICollectionView!
 	@IBOutlet weak var sortButton: UIButton!
-	
 	@IBAction func sort(_ sender: UIButton) {
 		if sortButton.isSelected {
 			sender.setImage(UIImage(named: "text.line.first.and.arrowtriangle.forward"), for: .normal)
@@ -70,7 +69,6 @@ class CommunityViewController: UIViewController, UICollectionViewDataSource, UIC
 }
 
 class PostCell: UICollectionViewCell {
-	//MARK: 인터페이스 빌더
 	@IBOutlet weak var previewImage: UIImageView!
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var contentLabel: UILabel!

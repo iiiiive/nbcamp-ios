@@ -54,7 +54,6 @@ class HomeViewController: UIViewController, SFSafariViewControllerDelegate {
 	}
 }
 
-//MARK: 홈 데코레이터
 class HomeDecorator {
 	static func run(homeViewController: HomeViewController) {
 		decorateTitle(homeViewController)

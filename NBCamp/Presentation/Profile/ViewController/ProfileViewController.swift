@@ -12,7 +12,6 @@ class ProfileViewController: UIViewController {
 	var minute: Int = 0
 	var second: Int = 0
 	var timer: Timer?
-	//MARK: 인터페이스 빌더
 	@IBOutlet weak var usernameLabel: UILabel!
 	@IBOutlet weak var timerLabel: UILabel!
 	@IBOutlet weak var startTimeLabel: UILabel!
