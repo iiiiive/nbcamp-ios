@@ -36,11 +36,11 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 		present(alertController, animated: true, completion: nil)
 	}
 	
+	let user: User = MockManager.shared.user
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		title = "내 정보 수정"
-		setUsernamePlaceHolder()
-		setUserImagePreviewImage()
+		EditViewDecorator.run(viewController: self, user)
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -49,27 +49,6 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
-	}
-	
-	private func setUsernamePlaceHolder() {
-		let user = MockManager.shared.user
-		usernameTextField.placeholder = user.username
-	}
-	
-	private func setUserImagePreviewImage() {
-		let user = MockManager.shared.user
-		userimageView.image = user.userimage
-		userimageView.layer.cornerRadius = CGFloat(0.0)
-		userimageView.layer.borderWidth = CGFloat(1.0)
-		userimageView.layer.borderColor = ColorManager.nbcTertiaryColor?.cgColor
-	}
-	
-	private func setUserImageChangeButton() {
-		let cb = userimageChangeButton
-		cb?.layer.cornerRadius = CGFloat(0.0)
-		cb?.layer.borderWidth = CGFloat(1.0)
-		cb?.backgroundColor = ColorManager.nbcSurfaceColor
-		cb?.layer.borderColor = ColorManager.nbcTertiaryColor?.cgColor
 	}
 	
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -84,5 +63,33 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 	}
 }
 
-//MARK: 내 정보 수정 뷰 데코레이터
-class EditViewDecorator {}
+class EditViewDecorator {
+	static func run(viewController: EditViewController, _ user: User) {
+		decorateUserImageChangeButton(viewController)
+		decorateUserImagePreviewImage(viewController, user)
+		decorateUsername(viewController, user)
+	}
+	
+	private static func decorateUserImageChangeButton(_ viewController: EditViewController) {
+		let cb = viewController.userimageChangeButton
+		cb?.layer.cornerRadius = CGFloat(0.0)
+		cb?.layer.borderWidth = CGFloat(1.0)
+		cb?.backgroundColor = ColorManager.nbcSurfaceColor
+		cb?.layer.borderColor = ColorManager.nbcTertiaryColor?.cgColor
+	}
+	
+	private static func decorateUsername(_ viewController: EditViewController, _ user: User) {
+		let user = MockManager.shared.user
+		let ut = viewController.usernameTextField
+		ut?.placeholder = user.username
+	}
+	
+	private static func decorateUserImagePreviewImage(_ viewController: EditViewController, _ user: User) {
+		let user = MockManager.shared.user
+		let uv = viewController.userimageView
+		uv?.image = user.userimage
+		uv?.layer.cornerRadius = CGFloat(0.0)
+		uv?.layer.borderWidth = CGFloat(1.0)
+		uv?.layer.borderColor = ColorManager.nbcTertiaryColor?.cgColor
+	}
+}
