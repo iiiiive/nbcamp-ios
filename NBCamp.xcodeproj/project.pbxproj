@@ -344,7 +344,6 @@
 			isa = PBXGroup;
 			children = (
 				1CDC11342A8E5C8000962069 /* Image */,
-				1CB7EF3A2A8BB248003F9215 /* Icon */,
 				1C2F32BE2A8B68FC00B26F14 /* Font */,
 				1C5EA3EE2A89EAAA00CD413E /* Assets.xcassets */,
 				1C5EA3EF2A89EAAA00CD413E /* LaunchScreen.storyboard */,
@@ -403,17 +402,10 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		1CB7EF3A2A8BB248003F9215 /* Icon */ = {
-			isa = PBXGroup;
-			children = (
-				1CB7EF3D2A8BB32B003F9215 /* iiiiive.png */,
-			);
-			path = Icon;
-			sourceTree = "<group>";
-		};
 		1CDC11342A8E5C8000962069 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				1CB7EF3D2A8BB32B003F9215 /* iiiiive.png */,
 				1CDC11462A8FAFA600962069 /* kimrtan.png */,
 				1CDC11432A8F9C1000962069 /* default_image.png */,
 				1CDC11352A8E5C9200962069 /* home_banner.png */,
